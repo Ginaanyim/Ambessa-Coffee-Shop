@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ambessa Coffee | Login</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="menu-toggle">&#9776;</div>
+
+      <a href="/uppgifter/9/html/index.html" class="logo-link">
+        <img src="/uppgifter/9/images/logo-name.png" alt="Ambessa Coffee logo" class="logo">
+      </a>
+
+      <nav class="navbar">
+        <a href="/uppgifter/9/html/home.html">Home</a>
+        <a href="/uppgifter/9/html/about.html">About</a>
+        <a href="/uppgifter/9/php/products.php">Products</a>
+        <a href="/uppgifter/9/html/contact.html">Contact</a>
+      </nav>
+      
+      <div class="icons">
+        <a href="../php/cart.php" class="cart-icon-wrapper">
+          <img src="../images/shopping-bag.png" alt="Cart" class="icon">
+        </a>
+        <a href="/uppgifter/9/php/profile-replace.php">
+          <img src="../images/user.png" alt="Profile" class="icon">
+        </a>
+      </div>
+      <div id="mini-cart" class="mini-cart-dropdown">
+        <h4>Shopping Bag</h4>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+      </div>
+      
+      <template id="mini-cart-item-template">
+        <div class="mini-cart-item">
+          <img src="---image---" alt="---name---" class="cart-item-image">
+          <div class="cart-item-details">
+            <strong>---name---</strong><br>
+            Antal: ---quantity---<br>
+            Pris: ---price--- kr
+          </div>
+        </div>
+      </template>
+    </div>
+  </header>
+
+  <h2>Login</h2>
+
+  <form action="../php/login.php" method="post">
+      <label for="email">Email:</label><br>
+      <input type="email" name="email" id="email" required><br><br>
+    
+      <label for="password">Password:</label><br>
+      <input type="password" name="password" id="password" required><br><br>
+    
+      <button type="submit" class="long-btn">Login</button>
+  </form>
+    <p id="registration">Not registered yet? <a href="register.html">Create an account here</a>.</p>
+
+    <footer id="footer">
+      <div class="footer-content">
+        <div class="footer-columns">
+    
+          <div class="footer-section">
+            <h4>SHOP</h4>
+            <ul>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Wholesale</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-section">
+            <h4>ABOUT</h4>
+            <ul>
+              <li><a href="about.html">Our story</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Terms and conditions</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-section">
+            <h4>HELP</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="#">Tutorials</a></li>
+            </ul>
+          </div>
+    
+          <div class="footer-section">
+            <h4>STAY UPDATED</h4>
+            <form action="../php/subscribe.php" method="post">
+              <input type="email" name="email" placeholder="Email address" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+    
+        <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../images/tiktok.png" alt="TikTok"></a>
+          </div>
+    
+          <div class="footer-legal">
+            <p>&copy; 2025 Ambessa Coffee. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/showAlert.js"></script>
+    
+
+</body>
+</html>

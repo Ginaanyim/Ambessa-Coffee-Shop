@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <button id="backBtn" class="back-button">&#8592;</button>
+
+  <h1>Din Kundvagn</h1>
+
+  <div id="cart-container">
+    ---CART_ITEMS---
+  </div>
+
+  <div>
+    ---TOTAL_AMOUNT---
+  </div>
+
+  <div>
+    <form method="post" action="../php/cart.php">
+      <button type="submit" name="update_cart">Uppdatera Kundvagn</button>
+    </form>
+    <a href="checkout.php">Gå till Kassan</a>
+  </div>
+
+</body>
+</html>
