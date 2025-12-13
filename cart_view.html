@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ambessa Coffee | Cart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="menu-toggle">&#9776;</div>
+
+      <a href="/index.html" class="logo-link">
+        <img src="/images/logo-name.png" alt="Ambessa Coffee logo" class="logo">
+      </a>
+
+      <nav class="navbar">
+        <a href="/home.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/php/products.php">Products</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <div class="icons">
+        <a href="/php/cart.php" class="cart-icon-wrapper">
+          <img src="/images/shopping-bag.png" alt="Cart" class="icon" />
+        </a>
+        <a href="/php/profile-replace.php">
+          <img src="/images/user.png" alt="Profile" class="icon" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <h1>Your Cart</h1>
+
+    ---CART_ITEMS---
+
+    <div class="cart-total">
+      ---TOTAL---
+    </div>
+
+    <div class="checkout-button-container">
+      ---CHECKOUT_BUTTON--- 
+  </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="footer-columns">
+        <div class="footer-section">
+          <h4>SHOP</h4>
+          <ul>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Wholesale</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>ABOUT</h4>
+          <ul>
+            <li><a href="/about.html">Our story</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>HELP</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="/contact.html">Contact us</a></li>
+            <li><a href="#">Tutorials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>STAY UPDATED</h4>
+          <form action="/php/subscribe.php" method="post">
+            <input type="email" name="email" placeholder="Email address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="#"><img src="/images/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="/images/instagram.png" alt="Instagram" /></a>
+          <a href="#"><img src="/images/tiktok.png" alt="TikTok" /></a>
+        </div>
+        <div class="footer-legal">
+          <p>&copy; 2025 Ambessa Coffee. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <template id="cart-item-template">
+    <div class="cart-item">
+      <div class="cart-item-inner">
+        <img src="---IMAGE---" alt="---NAME---" class="cart-img-large" />
+        <div class="cart-details">
+          <h2>---NAME---</h2>
+          <p>Quantity: ---QUANTITY---</p>
+          <p>Price: ---PRICE--- SEK/each</p>
+          <p>Subtotal: ---SUBTOTAL--- SEK</p>
+
+          <div class="quantity-buttons">
+            <form method="post" action="/php/cart.php" class="inline-form"> 
+                <input type="hidden" name="product_id" value="---PRODUCT_ID---" />
+                <button type="submit" name="action" value="decrease" class="qty-btn small-btn">-</button>
+            </form>
+            
+            <form method="post" action="/php/cart.php" class="inline-form">
+                <input type="hidden" name="product_id" value="---PRODUCT_ID---" />
+                <button type="submit" name="action" value="increase" class="qty-btn small-btn">+</button>
+            </form>
+        </div>
+
+        <div class="remove-action">
+            <form method="post" action="/php/cart.php">
+                <input type="hidden" name="product_id" value="---PRODUCT_ID---" />
+                <button type="submit" name="action" value="remove" class="remove-btn">Remove</button>
+            </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/showAlert.js"></script>
+</body>
+</html>

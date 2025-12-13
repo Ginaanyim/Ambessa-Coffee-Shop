@@ -16,25 +16,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
          //Eposten finns redan = skicka tillbaka plus felmeddelande
         if ($checkResult->num_rows > 0) {
-            header("Location: ../html/home.html?error=subscribed");
+            header("Location: ../index.html?error=subscribed");
             exit;
         } else {
             //Annars lägg till nya eposten i databasen
             $insertSql = "INSERT INTO subscribers (email) VALUES ('$email')";
             if ($conn->query($insertSql)) {
                 //Om det gick att lägga in den = skicka till thank-you sidan
-                header("Location: ../html/thank-you.html");
+                header("Location: ../thank-you.html");
                 exit;
             } else {
                 //Om något går fel = visa serverfel
-                header("Location: ../html/home.html?error=server_error");
+                header("Location: ../home.html?error=server_error");
                 exit;
             }
         }
 
     } else {
         //ogiltig epost = skicka tillbaka med felmeddelande
-        header("Location: ../html/home.html?error=invalid_email");
+        header("Location: ../home.html?error=invalid_email");
         exit;
     }
 }

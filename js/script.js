@@ -1,4 +1,3 @@
-
 //vänta tills DOM:en är laddad innan javacripten börjar köras
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
       history.back();
     });
   }
-
 });
 
 //Lägger till en produkt i kundvagnen
@@ -49,7 +47,7 @@ function addToCart(productId, quantity = 1) {
   formData.append('quantity', quantity);   
 
   //Skicar data till servern med fetch, metoden post, talar om vilken typ av data samt data som skickas som text
-  fetch('/uppgifter/9/php/cart_handler.php', {
+  fetch('/php/cart_handler.php', {
     method: 'POST', 
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: formData.toString() 
@@ -74,8 +72,13 @@ function addToCart(productId, quantity = 1) {
 
 //Funktionen visar mini-cart på sidan, hämtar aktuella kundvagnen från ervern via fetch och konverterar json svaret till javascript-objekt
 function showMiniCart() {
-  fetch('/uppgifter/9/php/cart-status.php')
+  // KORRIGERING: Använder nu den korrekta sökvägen (utan /uppgifter/9/)
+  fetch('/php/cart-status.php')
   .then(function(res) {
+    //Kontrollerar att svaret är OK innan JSON parsas
+    if (!res.ok) {
+        throw new Error('Network response was not ok: ' + res.statusText);
+    }
     return res.json();
   })
   .then(function(cart) {
@@ -85,7 +88,10 @@ function showMiniCart() {
     const template = document.getElementById('mini-cart-item-template'); 
 
     //Om något element saknas gör ingenting
-    if (!miniCart || !cartItemsContainer || !template) return;
+    if (!miniCart || !cartItemsContainer || !template) {
+        console.warn("Mini-cart HTML elements are missing on the page.");
+        return;
+    }
 
     //Tömmer tidigare innehåll
     cartItemsContainer.innerHTML = '';
@@ -105,7 +111,8 @@ function showMiniCart() {
           .replace(/---name---/g, item.name)
           .replace(/---quantity---/g, item.quantity)
           .replace(/---price---/g, item.price)
-          .replace(/---image---/g, '/uppgifter/9/images/' + item.image);
+          // KORRIGERAD SÖKVÄG: Denna sökväg var redan rätt i originalkoden, den pekar på /images/ i roten
+          .replace(/---image---/g, '/images/' + item.image); 
 
         clone.querySelector('.mini-cart-item').innerHTML = html;
         cartItemsContainer.appendChild(clone);
@@ -116,6 +123,7 @@ function showMiniCart() {
       cartTotalContainer.innerHTML = 'Total: ' + total + ' kr'; 
     } else {
       cartItemsContainer.innerHTML = 'Cart is empty.'; 
+      cartTotalContainer.innerHTML = 'Total: 0 kr'; 
     }
 
     //Visar mini-carten genom att lägga till active klassen
@@ -128,6 +136,7 @@ function showMiniCart() {
   })
   .catch(function(err) {
     //Visar fel om det inte gick att hämta kundvagnen
-    console.warn("Couldn't load cart:", err);
+    console.error("Error loading cart status:", err);
+    console.warn("Couldn't load cart. This is often due to missing HTML elements or a server 500 error after 404 was fixed.");
   });
 }

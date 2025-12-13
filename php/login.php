@@ -1,5 +1,4 @@
 <?php
-//Koppla till databasen och starta sessionen
 require_once 'db.php';
 require_once 'start_session.php';
 
@@ -32,13 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: profile-replace.php");
             exit();
         } else {
-            header("Location: ../html/login.html?error=password");
+            header("Location: /login.html?error=password");
             exit();
         }
     } else {
         //Eposten finns inte i databasen, felmeddelande
-        header("Location: ../html/login.html?error=email");
+        header("Location: /login.html?error=email");
         exit();
     }
 }
-

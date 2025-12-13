@@ -1,9 +1,9 @@
 <?php
 //Kopplingsinställningar till databasen
-$host = 'localhost';     
-$db = 'ambessa_store'; 
-$user = 'root';       
-$pass = '';          
+$host = 'database-5019171788.webspace-host.com';     
+$db = 'dbs15055826'; 
+$user = 'dbu1302384';       
+$pass = 'Yirgalem12';          
 
 //Ansluter till databasen
 $conn = new mysqli($host, $user, $pass, $db);

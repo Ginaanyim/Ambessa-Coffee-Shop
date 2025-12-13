@@ -17,6 +17,6 @@ if (isset($_COOKIE['session_id'])) {
 }
 
 //Omdirigering till login-sidan
-header("Location: ../html/login.html");
+header("Location: /login.html");
 exit();
 

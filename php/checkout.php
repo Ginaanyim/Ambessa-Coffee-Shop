@@ -68,14 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 //Läs in html för checkout-sidan
-$html = file_get_contents('../html/checkout.html');
+$html = file_get_contents('../checkout.html');
 
 //Visa meddelande som sucess eller error
 $messages = !empty($success) ? $success : implode("\n", $errors);
 $html = str_replace('---MESSAGES---', $messages, $html);
 
 //Om ordern inte är lagd visa formuläret
-$form = empty($success) ? file_get_contents('../html/checkout-form.html') : '';
+$form = empty($success) ? file_get_contents('../checkout-form.html') : '';
 $html = str_replace('---FORM---', $form, $html);
 
 echo $html;

@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //Kontroll om lösenordet matchar bekräftelsen annars felmeddelande
     if ($password !== $confirm) {
-        header("Location: ../html/register.html?error=password_mismatch");
+        header("Location: /register.html?error=password_mismatch");
         exit();
     }
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $checkSql = "SELECT id FROM users WHERE email = '$email'";
     $checkResult = $conn->query($checkSql);
     if ($checkResult->num_rows > 0) {
-        header("Location: ../html/login.html?error=email_exists");
+        header("Location: /login.html?error=email_exists");
         exit();
     }
 
@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $insertSql = "INSERT INTO users (firstName, lastName, email, password) 
                   VALUES ('$firstName', '$lastName', '$email', '$hashed')";
     if ($conn->query($insertSql)) {
-        header('Location: ../html/login.html?success=registered');
+        header('Location: /login.html?success=registered');
         exit();
     } else {
-        header("Location: ../html/register.html?error=server_error");
+        header("Location: /register.html?error=server_error");
         exit();
     }
 }
