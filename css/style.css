@@ -124,8 +124,8 @@ p {
 }
 
 .icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -591,6 +591,7 @@ select {
   background-color: #ffda6b;
   color: #3c270b;
   text-decoration: none;
+  font-weight: bold;
   margin-top: 15px;
   padding: 10px 25px;
   border-radius: 5px;
