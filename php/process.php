@@ -4,9 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// INKLUDERA DIN SEPARATA KONFIGURATIONSFIL (Säkert lösenord)
 // Använder den ABSOLUTA sökvägen till filen i htdocs/
-require '/mnt/web703/d0/70/570564670/htdocs/mail_config.php'; 
+require '../.config/mail_config.php';
 
 // inkluderar PHPMailer-biblioteket och skapar ett nytt PHPMailer-objekt
 require 'PHPMailerAutoload.php';
