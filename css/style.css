@@ -84,7 +84,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 40px;  
   height: 60px;
   position: relative;
 }
@@ -864,6 +864,10 @@ select {
     width: 60%;
   }
 
+  .about-page p {
+    max-width: 650px;
+  }
+
   .about-page p,
   .about-page ul li {
     font-size: 1rem;
@@ -912,7 +916,8 @@ select {
     height: 100px;
     justify-content: space-between; 
     align-items: center;
-    }
+    position: relative;
+  }
 
   .menu-toggle {
     display: none;
@@ -926,7 +931,8 @@ select {
   }
 
   .icons {
-    gap: 30px;
+    gap: 15px;
+    order: 3;
   }
 
   .icon {
@@ -937,24 +943,21 @@ select {
   .navbar {
     display: flex;
     flex-direction: row;
-    position: static;
+    position: absolute;
     justify-content: center;
-    background-color: transparent;
-    box-shadow: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);    
     gap: 30px;
     padding: 0;
-    order: 2;
+    background-color: transparent;
+    box-shadow: none;
   }
 
   .navbar a {
     font-size: 1rem;
     padding: 2px 0;
     text-transform: uppercase;
-  }
-
-  .icons {
-    gap: 30px;
-    order: 3;
   }
 
   .hero {
