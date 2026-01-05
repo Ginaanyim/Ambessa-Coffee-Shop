@@ -84,18 +84,12 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;  
+  padding: 0 20px 0 10px;;  
   height: 60px;
-  position: relative;
 }
 
 .logo {
   width: 120px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
 }
 
 .navbar {
@@ -105,10 +99,11 @@ p {
   position: absolute;
   top: 100%;
   left: 0;
+  right: 0;
   width: 100%;
   text-align: center;
   padding: 20px 0;
-  z-index: 1000;
+  z-index: 999;
   gap: 0.8rem;
 }
 
@@ -132,7 +127,7 @@ p {
 .icons {
   display: flex;
   gap: 10px;
-  margin-right: 10px;
+  z-index: 1001;
 }
 
 .icon {
@@ -149,7 +144,7 @@ p {
 .menu-toggle {
   display: block;
   font-size: 24px;
-  z-index: 1001;
+  z-index: 1002;
   cursor: pointer;
   padding: 5px;
 }
@@ -916,7 +911,6 @@ select {
     height: 100px;
     justify-content: space-between; 
     align-items: center;
-    position: relative;
   }
 
   .menu-toggle {
@@ -925,14 +919,10 @@ select {
 
   .logo {
     width: 180px;
-    position: static;
-    transform: none;
-    order: 1;
   }
 
   .icons {
     gap: 15px;
-    order: 3;
   }
 
   .icon {
@@ -948,10 +938,11 @@ select {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);    
-    gap: 30px;
+    gap: 20px;
     padding: 0;
     background-color: transparent;
     box-shadow: none;
+    width: auto;
   }
 
   .navbar a {
@@ -1025,7 +1016,7 @@ select {
 
 @media screen and (min-width: 1024px) {
   .navbar {
-    gap: 50px;
+    gap: 40px;
   }
 
   .navbar a {
