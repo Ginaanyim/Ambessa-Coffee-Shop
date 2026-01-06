@@ -1,13 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap');
 
 @keyframes fadeInSlideUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 @keyframes simple-fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 header {
@@ -84,7 +112,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 10px;;  
+  padding: 0 20px 0 10px;  
   height: 60px;
 }
 
@@ -112,12 +140,28 @@ p {
   text-decoration: none;
   font-size: 0.875rem;
   padding: 5px 0 7px 0;
-  transition: transform 0.3s, color 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: rgb(155, 105, 31);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .navbar a:hover {
   color: rgb(155, 105, 31);
-  transform: scale(1.1);
+}
+
+.navbar a:hover::after {
+  width: 100%;
 }
 
 .navbar.active {
@@ -134,11 +178,11 @@ p {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
 }
 
 .icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.15) rotate(5deg);
 }
 
 .menu-toggle {
@@ -214,7 +258,7 @@ p {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
   font-size: 0.875rem;
   margin-top: 12px;
   border-radius: 20px;
@@ -223,21 +267,21 @@ p {
 
 .btn:hover {
   background-color: #6c4618;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 70, 24, 0.3);
 }
 
 form {
   font-size: 0.875rem;
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   line-height: 1.6;
   margin: 30px auto;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   padding: 15px;
-  border-radius: 5px;
   opacity: 0;
-  animation: fadeInSlideUp 1s ease-out forwards;
-  animation-delay: 0.2s;
+  animation: scaleIn 0.6s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
 fieldset {
@@ -253,8 +297,8 @@ fieldset {
 }
 
 #form p {
-  width: 100%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 450px;
   text-align: center;
   margin: 20px auto 0 auto;
   line-height: 1.6;
@@ -301,6 +345,7 @@ form textarea:focus {
 form label {
   font-size: 0.875rem;
   display: block;
+  margin-top: 10px;
 }
 
 select {
@@ -321,27 +366,33 @@ select {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   opacity: 0;
-  animation: fadeInSlideUp 0.7s ease-out forwards;
+  animation: scaleIn 0.6s ease-out forwards;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.product-card:nth-child(1) { animation-delay: 0.2s; }
-.product-card:nth-child(2) { animation-delay: 0.4s; }
-.product-card:nth-child(3) { animation-delay: 0.6s; }
-.product-card:nth-child(4) { animation-delay: 0.8s; }
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
+.product-card:nth-child(6) { animation-delay: 0.6s; }
 
 .product-card a {
   text-decoration: none;
 }
 
 .product-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
   width: 100%;
+  height: 250px;
   object-fit: cover;
   border-radius: 0;
 }
@@ -367,11 +418,11 @@ select {
   padding: 20px;
   margin: 20px auto 0 auto;
   text-align: center;
-  background-color: #fffcf5;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 12px;
   opacity: 0;
-  animation: fadeInSlideUp 1s ease-out forwards;
-  animation-delay: 0.2s;
+  animation: fadeInSlideUp 0.7s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
 .product-detail-page p {
@@ -409,7 +460,7 @@ select {
 
 .product-image {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   height: auto;
   object-fit: cover;
   margin-bottom: 5px;
@@ -436,11 +487,13 @@ select {
   font-size: 0.875rem;
   width: 100%;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .cart-btn:hover {
   background-color: #e2c262;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 218, 107, 0.4);
 }
 
 #detail-btn {
@@ -527,12 +580,6 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.qty-btn.small-btn:hover {
-  background-color: #f7f3ed;
-  color: #6c4618;
 }
 
 .remove-action {
@@ -549,14 +596,8 @@ select {
   border-radius: 3px;
   cursor: pointer;
   font-size: 0.875rem;
-  transition: color 0.3s;
   text-decoration: none;
   text-align: left;
-}
-
-.remove-btn:hover {
-  color: #6c4618;
-  text-decoration: underline;
 }
 
 .simple-remove-btn:hover {
@@ -602,12 +643,13 @@ select {
 }
 
 .cart-page {
-  background-color: #fffcf5;
+  background-color: #ffffff;
   padding: 1.5rem;
   width: 90%;
   max-width: 1000px;
   margin: 30px auto 0 auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  opacity: 1;
 }
 
 .checkout-button-container {
@@ -624,18 +666,20 @@ select {
   margin-top: 15px;
   padding: 10px 25px;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
   background-color: #e2c262;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 218, 107, 0.4);
 }
 
 .checkout-container {
   max-width: 90%;
   margin: 30px auto;
   padding: 1rem;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -680,6 +724,7 @@ select {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .footer-columns {
@@ -687,7 +732,7 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 20px;
   text-align: left;
-  margin: 0 20px 30px 20px;
+  margin-bottom: 30px;
 }
 
 .footer-section h4 {
@@ -887,6 +932,7 @@ select {
 
   form {
     padding: 30px;
+    border-radius: 12px;
   }
 
   #footer {
@@ -1016,11 +1062,11 @@ select {
 
 @media screen and (min-width: 1024px) {
   .navbar {
-    gap: 40px;
+    gap: 30px;
   }
 
   .navbar a {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   #cursive {
@@ -1065,8 +1111,8 @@ select {
 
   .about-page, .product-detail-page {
     max-width: 900px;
-    padding: 50px 80px;
     margin-top: 60px;
+    padding: 30px;
   }
 
   .products-page p,

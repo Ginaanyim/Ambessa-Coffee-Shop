@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             unset($_SESSION['cart'][$productId]); 
         }
     }
-    // SKICKAR ANVÄNDAREN TILLBAKA TILL KUNDVAGNSSIDAN (KORRIGERAD SÖKVÄG)
+    // SKICKAR ANVÄNDAREN TILLBAKA TILL KUNDVAGNSSIDAN
     header("Location: cart.php");  
     exit();
 }
