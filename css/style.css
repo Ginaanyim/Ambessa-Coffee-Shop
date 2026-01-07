@@ -68,9 +68,9 @@ main {
   display: block;
   margin: 1.5rem auto 1.5rem auto; 
   padding: 0.5rem 1rem;
-  background-color: #e5e2dc;
-  color: #3c270b;
-  border: none;
+  background-color: #faf6f1;
+  color: #6c4618;
+  border: 2px solid #d4a574;
   border-radius: 5px;
   cursor: pointer;
   text-align: center; 
@@ -465,6 +465,11 @@ select {
   height: auto;
   object-fit: cover;
   margin-bottom: 5px;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
 }
 
 .product-item h3 {
@@ -676,20 +681,6 @@ select {
   box-shadow: 0 4px 12px rgba(255, 218, 107, 0.4);
 }
 
-.checkout-container {
-  max-width: 90%;
-  margin: 30px auto;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.checkout-form input,
-.checkout-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
 .checkout-form button {
   display: block;
@@ -697,6 +688,7 @@ select {
   max-width: 150px;
   margin: 25px auto 0 auto;
   background-color: #ffda6b;
+  font-size: 1rem;
   color: #3c270b;
   padding: 0.7rem 1.4rem;
   border: none;
@@ -875,7 +867,8 @@ select {
 }
 
 .profile-dashboard {
-  max-width: 800px;
+  width: 80%;
+  max-width: 700px;
   margin: 40px auto;
   padding: 30px;
   background-color: #ffffff; 
@@ -940,6 +933,10 @@ select {
   .hero p {
     font-size: 1rem;
     width: 60%;
+  }
+
+  .about-page{
+    padding: 30px;
   }
 
   .about-page p {
@@ -1096,6 +1093,10 @@ select {
   .social-icons a img {
     width: 25px;
     height: 25px;
+  }
+
+  .product-dashboard {
+    max-width: 700px;
   }
 }
 
