@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 @keyframes fadeInSlideUp {
   0% { 
@@ -51,7 +52,7 @@ header {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;  
+  font-family: 'Lato', sans-serif;
   display: flex;
   flex-direction: column;
   background-image: url("../images/background-main.jpg");
@@ -68,9 +69,9 @@ main {
   display: block;
   margin: 1.5rem auto 1.5rem auto; 
   padding: 0.5rem 1rem;
-  background-color: #faf6f1;
+  background-color: #f0ebe5;
   color: #6c4618;
-  border: 2px solid #d4a574;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
   text-align: center; 
@@ -85,7 +86,6 @@ main {
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;  
   color: #6c4618;
   font-size: 1.2rem;
   margin-top: 30px;
@@ -94,7 +94,6 @@ h1 {
 }
 
 h2 {
-  font-family: 'Montserrat', sans-serif;  
   color: #6c4618;
   font-size: 1.1rem;
   margin-top: 30px;
@@ -103,7 +102,6 @@ h2 {
 }
 
 p {
-  font-family: 'Montserrat', sans-serif;  
   font-size: 1rem;
   font-weight: 400;
 }
@@ -117,7 +115,7 @@ p {
 }
 
 .logo {
-  width: 120px;
+  width: 140px;
 }
 
 .navbar {
@@ -132,7 +130,7 @@ p {
   text-align: center;
   padding: 20px 0;
   z-index: 999;
-  gap: 0.8rem;
+  gap: 15px;
 }
 
 .navbar a {
@@ -151,7 +149,7 @@ p {
   height: 2px;
   bottom: 0;
   left: 50%;
-  background-color: rgb(155, 105, 31);
+  background-color: rgba(199, 145, 63, 0.827);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -212,6 +210,10 @@ p {
   text-align: left;
 }
 
+.description {
+  font-weight: 400;
+}
+
 .hero {
   margin-top: 20px;
   max-width: 70%;
@@ -228,11 +230,10 @@ p {
 }
 
 #cursive {
-  font-family: cursive;
-  color: rgb(155, 105, 31);
-  font-size: 1.5rem;
+  font-family: 'Great Vibes', cursive;
+  color: #9b6829;
+  font-size: 1.8rem;
   font-style: italic;
-  margin-bottom: 1.5rem;
   text-align: left;
 }
 
@@ -245,28 +246,32 @@ p {
 .hero-buttons {
   display: flex;
   gap: 1rem;
-  margin-top: 30px;
   opacity: 0;
   animation: simple-fade-in 0.8s ease-out forwards;
   animation-delay: 0.9s;
 }
 
+.tagline {
+  font-size: 0.875rem;
+  color: #6c4618;
+  margin-top: 10px;
+}
+
 .btn {
   display: inline-block;
-  background-color: rgb(165, 101, 42);
+  background-color: rgb(245, 168, 61);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 20px;
   font-weight: bold;
   transition: all 0.3s ease;
   font-size: 0.875rem;
   margin-top: 12px;
-  border-radius: 20px;
-  padding: 8px;
+  padding: 12px;
 }
 
 .btn:hover {
-  background-color: #6c4618;
+  background-color: rgb(216, 147, 51);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(108, 70, 24, 0.3);
 }
@@ -675,7 +680,6 @@ select {
   box-shadow: 0 4px 12px rgba(255, 218, 107, 0.4);
 }
 
-
 .checkout-form button {
   display: block;
   width: 90%;
@@ -720,6 +724,10 @@ select {
   gap: 20px;
   text-align: left;
   margin-bottom: 30px;
+  max-width: 1000px;   
+  margin-left: auto;    
+  margin-right: auto;
+
 }
 
 .footer-section h4 {
@@ -788,13 +796,12 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   text-align: center;
 }
 
 .social-icons {
   margin-top: 20px;
-  margin-bottom: 5px;
 }
 
 .social-icons a img {
@@ -818,6 +825,7 @@ select {
   font-size: 0.8125rem;
   color: #555;
   margin: 2px 0;
+  padding-top: 8px;
 }
 
 .mini-cart-dropdown {
@@ -881,7 +889,8 @@ select {
 
 .profile-content h2 {
   margin: 0 auto;
-  max-width: 600px}
+  max-width: 600px;
+}
 
 #user-orders {
   padding: 30px;
@@ -896,8 +905,6 @@ select {
   margin-top: 30px;
 }
 
-
-
 @media screen and (min-width: 480px) {
   body {
     background-image: url("../images/background-main2.jpg");
@@ -908,16 +915,16 @@ select {
   }
 
   .navbar a {
-    font-size: 0.95rem
+    font-size: 0.95rem;
   }
 
   .logo {
-    width: 150px;
+    width: 160px;
   }
 
   .icon {
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
   }
 
   h1 {
@@ -926,10 +933,10 @@ select {
 
   .hero p {
     font-size: 1rem;
-    width: 60%;
+    width: 90%;
   }
 
-  .about-page{
+  .about-page {
     padding: 30px;
   }
 
@@ -943,10 +950,10 @@ select {
   }
 
   #cursive {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
-  .products-grid{
+  .products-grid {
     max-width: 1100px;
   }
 
@@ -954,7 +961,6 @@ select {
   .about-page {
     max-width: 800px;
   }
-  
 
   .cart-img-large {
     width: 120px;
@@ -999,6 +1005,7 @@ select {
 
   .icons {
     gap: 15px;
+    padding-right: 10px;
   }
 
   .icon {
@@ -1013,22 +1020,23 @@ select {
     justify-content: center;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);    
-    gap: 20px;
-    padding: 0;
+    transform: translate(-50%, -50%);
     background-color: transparent;
     box-shadow: none;
     width: auto;
+    gap: 30px; /* ← adjusted from 25px to match bigger font */
   }
 
   .navbar a {
-    font-size: 1rem;
+    font-size: 1.05rem; /* ← increased */
     padding: 2px 0;
-    text-transform: uppercase;
+  }
+
+  .home-page {
+    padding: 20px 20px 20px 40px; /* ← more left padding on tablet+ */
   }
 
   .hero {
-    max-width: 900px;
     margin: 20px 0 10px 2%;
   }
 
@@ -1038,13 +1046,12 @@ select {
   }
 
   #cursive {
-    font-size: 1.75rem;
+    font-size: 2.2rem;
   }
   
   .btn {
     font-size: 1rem;
     padding: 10px 18px; 
-    border-radius: 25px;
   }
   
   .about-page h1 {
@@ -1096,22 +1103,26 @@ select {
 
 @media screen and (min-width: 1024px) {
   .navbar {
-    gap: 30px;
+    gap: 50px; 
   }
 
   .navbar a {
-    font-size: 1.1rem;
+    font-size: 1.15rem; 
   }
 
-  #cursive {
-    font-size: 1.8rem;
+  .home-page {
+    padding: 40px 20px 20px 80px; 
   }
 
   .hero p {
     font-size: 1.1rem;
     max-width: 450px;
   }
-  
+
+  .hero-buttons {
+    gap: 1.5rem;
+  }
+
   h1 {
     font-size: 1.5rem;
   }
@@ -1121,9 +1132,7 @@ select {
   }
 
   .btn {
-    font-size: 1rem; 
     padding: 10px 22px; 
-    border-radius: 30px;
   }
 
   #form p {

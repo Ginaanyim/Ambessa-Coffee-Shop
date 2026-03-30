@@ -1,0 +1,2 @@
+# Neka åtkomst till alla filer i denna mapp
+Deny from all

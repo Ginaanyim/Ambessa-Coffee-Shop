@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ambessa Coffee | Cart</title>
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/favicon.ico">
+
 </head>
 <body>
   <header>
@@ -102,7 +104,9 @@
   <template id="cart-item-template">
     <div class="cart-item">
       <div class="cart-item-inner">
-        <img src="---IMAGE---" alt="---NAME---" class="cart-img-large" />
+        <a href="/php/product-detail.php?id=---PRODUCT_ID---">
+          <img src="---IMAGE---" alt="---NAME---" class="cart-img-large" />
+        </a>
         <div class="cart-details">
           <h2>---NAME---</h2>
           <p>Quantity: ---QUANTITY---</p>
